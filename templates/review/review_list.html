@@ -1,0 +1,15 @@
+{% extends 'gamingpatrada/base.html' %}
+{% load i18n %}
+
+{% block title_block%}{% trans "Reviews" %}{% endblock %}
+
+{% block page_content %}
+    <h1>{% trans "Reviews" %}</h1>
+    <ul>
+        {% for review in object_list %}
+            <li>
+                <a href="{% url "review_detail" pk=review.pk %}">{{ review }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
